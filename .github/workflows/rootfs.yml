@@ -5,6 +5,9 @@ env:
   ANDROID_NDK_ROOT: /home/runner/lib/android-ndk-r29/
   CLEAN_DOCKER_IMAGES: true
 
+permissions:                # ← Add this block
+  contents: write
+  
 on:
   workflow_dispatch:
     inputs:
