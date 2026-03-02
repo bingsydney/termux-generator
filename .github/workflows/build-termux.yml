@@ -86,6 +86,11 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
       - name: Set --add
         if: "${{ github.event.inputs.add != '' }}"
         run: echo "ADDITIONAL_PACKAGES=--add ${{ github.event.inputs.add }}" >> $GITHUB_ENV
